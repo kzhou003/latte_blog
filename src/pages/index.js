@@ -1,25 +1,21 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+import * as React from 'react'
+import Layout from '../components/layout'
+import { StaticImage } from 'gatsby-plugin-image'
+import Seo from '../components/seo'
 
-import Header from './components/Header';
-import Home from './components/Home';
-import Resume from './components/Resume';
-import BlogPost from './components/BlogPost';
 
-function App() {
+const IndexPage = () => {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-          <Routes>
-            <Route exact path="/" component={Home} />
-            <Route path="/resume" component={Resume} />
-            <Route path="/blog/:id" component={BlogPost} />
-          </Routes>
-      </div>
-    </Router>
-  );
+    <Layout pageTitle="Home Page">
+      <p>I'm making this by following the Gatsby Tutorial.</p>
+      <StaticImage
+        alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
+        src="../images/gemma_watching_you.jpg"
+      />
+    </Layout>
+  )
 }
 
-export default App;
+export const Head = () => <Seo title="Home Page" />
+
+export default IndexPage
