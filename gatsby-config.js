@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "LatteBytes",
+    title: "Kuan Zhou",
   },
   plugins: [
     "gatsby-plugin-image",
