@@ -30,13 +30,13 @@ const IndexPage = () => {
 
       <h2> Specialties </h2>
       <ul>
-      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>Programming language</span>: Python, C++, Java, Golang, Javascript </li>
-      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>AI framework</span>: Pytorch, TensorFlow, JAX </li>
-      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>Distributed system</span>: Torch distributed, DeepSpeed, Kubernetes </li>
-      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>ML compiler</span>: MLIR, TVM </li>
-      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>MLOps</span>: Kubeflow, MLFlow, Weights & Biases </li>
+      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>Programming language</span>: Python, C++, Java, Golang, JavaScript </li>
+      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>AI framework</span>: Pytorch, JAX, TensorFlow </li>
+      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>Distributed system</span>: Torch distributed, DeepSpeed </li>
+      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>ML compiler</span>: MLIR, TVM, LLVM </li>
+      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>MLOps</span>: Docker, gRPC, Kubernetes, Kubeflow, MLFlow, Weights & Biases </li>
       <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>Science</span>: Mathematica, Julia, Matlab </li>
-      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>Others</span>: Docker, gRPC, TeX, SQL,  Spark, Hadoop, ORTools, Numba, CUDA </li>
+      <li> <span style={{ fontWeight: 'bold', color: '#333333'}}>Others</span>: TeX, SQL, Spark, Hadoop, ORTools, Numba, CUDA </li>
       </ul>
 
       <h2> Experience </h2>
