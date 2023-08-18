@@ -43,10 +43,31 @@ const IndexPage = () => {
       <ul>
       <li>Principal Engineer at <a href="https://sambanova.ai/">SambaNova Systems</a>, <span className={date}>April 2020 - Present</span> 
       <ul>
-      <li> Leading a team to containerize foundation models into Kubernetes compatible microservices </li> 
-      <li> Contributed in essential design and core features of SambaNova AI framework </li>
-      <li> Co-designed and co-developed distributed learning infrastructure for extreme large models </li>
-      <li> Implemented various deep learning models based on dataflow architecture and software platform </li>
+      <li>Tech lead in containerizing and deploying generative AI models onto Kubernetes platform SambaStudio </li>
+
+      <ul>
+      <li>Led a 5+ engineers team to deploy 10+ foundation model based solutions to business customers</li>
+      <li>Prototyped the generative AI model deployment pipeline in collaboration with Kubernetes platform team </li>
+      <li>Built general and extensive infrastructure for continuous model integration and deployment</li>
+      <li>Standardized the model bringup and integration procedure via refactoring ML applications</li>
+      </ul>
+
+      <li>Co-designed and co-developed distributed learning infrastructure for extreme large models</li>
+      <ul>
+      <li>Overlapping gradient synchronization in machine learning(U.S. patent pending with filing date 2/14/2022)</li>
+      <li>System of heterogeneous reconfigurable processors for the data parallel execution of applications(U.S. patent
+pending with filing date 9/9/2022)</li>
+      </ul>
+
+      <li>Contributed in core features of SambaNova AI framework</li>
+      <ul>
+      <li>Designed, implemented and maintained a binary data extractor as bridge between compiler and runtime</li>
+      <li>Refactored and upgraded AI framework codebase to support functional programming style dataflow execution</li>
+      <li>Implemented various deep learning operators from compiler low level kernels to AI framework end to end</li>
+      <li>Optimized performance of deep learning models(HIPNN etc.) based on SambaNova AI framework and
+dataflow architecture</li>
+      <li>Integrated TensorBoard as visualization and accuracy debugger tool into SambaNova AI framework</li>
+      </ul> 
       </ul>
       </li>
 
