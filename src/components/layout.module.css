@@ -1,41 +1,64 @@
 .container {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 15%;
-    margin-right: 15%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: #FFF;
-    font-family: sans-serif;
-  }
-  
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #FFF;
+  font-family: sans-serif;
+}
+
 .heading {
- color: rebeccapurple;
+  color: rebeccapurple;
 }
 
-.nav-links {
- display: flex;
- list-style: none;
- padding-left: 0;
+.navLinks {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
 }
 
-.nav-link-item {
- padding-right: 2rem;
+.navLinkItem {
+  padding-right: 2rem;
 }
 
-.nav-link-text {
- color: black;
+.navLinkText {
+  color: black;
+  text-decoration: underline; /* Adds underline to links */
+  padding: 10px; /* Add padding for the button effect */
+  border-radius: 5px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for the pop-out effect */
 }
 
-.site-title {
-    font-size: 3rem;
-    color: black;
-    font-weight: 700;
-    margin: 3rem 0;
-  }
+.navLinkText:hover {
+  background-color: #f0f0f0; /* Slightly change background on hover */
+}
+
+.siteTitle {
+  font-size: 3rem;
+  color: black;
+  font-weight: 700;
+  margin: 3rem 0;
+}
+
+.navBar {
+  font-size: 1rem;
+  color: rgb(180, 29, 29);
+  font-weight: 700;
+  margin: 3rem 0;
+}
+
+.activeNavLink {
+  background-color: #add8e6; /* Light blue background color for active link */
+  color: #000; /* Text color for active link */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for pop-out effect */
+  font-weight: bold; /* Make text bold */
+  text-decoration: underline; /* Keep underline for active link */
+}
 
 body {
-  background-color: #6a8dba;
+  background-color: #93abca;
 }

@@ -1,20 +1,24 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "gatsby-lattebytes-blog",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "A simple blog for lattebytes",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "node --no-deprecation ./node_modules/.bin/gatsby develop",
+    "build": "node --no-deprecation ./node_modules/.bin/gatsby build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@mdx-js/react": "^2.3.0",
-    "gatsby": "^5.8.1",
+    "gatsby": "^5.13.7",
     "gatsby-plugin-image": "^3.8.0",
     "gatsby-plugin-mdx": "^5.8.0",
     "gatsby-plugin-sharp": "^5.8.1",
@@ -26,9 +30,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/kzhou003/latte_blog"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/kzhou003/latte_blog/issues"
   }
 }

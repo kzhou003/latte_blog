@@ -1,25 +1,36 @@
 import * as React from 'react'
 import Layout from '../../components/layout'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { graphql } from 'gatsby'
 import Seo from '../../components/seo'
 
 const BlogPost = ({ data, children }) => {
-  const image = getImage(data.mdx.frontmatter.hero_image)
+  const { frontmatter } = data.mdx
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
-      <p>{data.mdx.frontmatter.date}</p>
-      <GatsbyImage
-      image={image}
-      alt={data.mdx.frontmatter.hero_image_alt}
-    />
-    <p>
-        Photo Credit:{" "}
-        <a href={data.mdx.frontmatter.hero_image_credit_link}>
-          {data.mdx.frontmatter.hero_image_credit_text}
-        </a>
-      </p>
-      {children}
+    <Layout pageTitle="">
+      <article style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem', color: '#333' }}>{frontmatter.title}</h1>
+        <p style={{ fontSize: '1rem', color: '#666', marginBottom: '2rem' }}>{frontmatter.date}</p>
+        {frontmatter.hero_image && (
+          <div style={{ marginBottom: '2rem' }}>
+            <img
+              src={frontmatter.hero_image}
+              alt={frontmatter.hero_image_alt || ''}
+              style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+            />
+            {frontmatter.hero_image_credit_text && (
+              <p style={{ fontSize: '0.8rem', color: '#666', marginTop: '0.5rem' }}>
+                Photo Credit:{" "}
+                <a href={frontmatter.hero_image_credit_link} style={{ color: '#0056b3', textDecoration: 'none' }}>
+                  {frontmatter.hero_image_credit_text}
+                </a>
+              </p>
+            )}
+          </div>
+        )}
+        <div style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#333' }}>
+          {children}
+        </div>
+      </article>
     </Layout>
   )
 }
@@ -30,14 +41,10 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        hero_image
         hero_image_alt
         hero_image_credit_link
         hero_image_credit_text
-        hero_image {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
   }

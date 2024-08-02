@@ -1,0 +1,78 @@
+---
+title: "关于系统设计和架构"
+date: "2024-08-03"
+slug: "software-architecture"
+hero_image: ""
+hero_image_alt: ""
+hero_image_credit_link: ""
+hero_image_credit_text: ""
+---
+
+分享一下最近学习和实践软件设计与架构的收获 - 之前对于系统架构的理解陷入了经常看到的系统设计面试题的误区，系统架构其实比想象的更有迹可循。
+
+## 架构师的广度加深度
+引用一张不错的图片如下: 架构需要对于技术栈理解的广度和深度。
+
+![Software Architecture](/blogs/architecture.png)
+
+## 开卷有益
+结合实践的项目经验，回答也基于以下资源，每本都是开卷有益的好书。
+- 《Fundamentals of software architecture》
+- 《Software architecture: the hard parts》
+- 《Clean architecture》
+- 《Learning domain driven design》
+- 《Design data intensive applications》
+- 《Building event driven micro-services》
+- 《Design pattern for cloud native applications》
+- 《Platform engineering on Kubernetes》
+- 《Programming Kubernetes》
+- 《Architecture patterns with python》
+- 《Creating software with modern diagramming techniques》
+
+## 单纯的架构设计
+系统架构其实在实际操作中涵盖的不只是理论，好的架构师往往还需要自身魅力和协商才能等。
+
+如果对于非常单纯的架构设计，我认为核心的是三部分：
+- 对于domain的足够了解和分析讨论
+- 对于technical stack的深入理解和实验
+- 对于组件之间耦合分析加性能分析
+
+## 广泛的架构设计
+
+对于广泛一些的实际系统架构，我的比较pragmatical的理解是：
+### 架构构思阶段
+  - 遵循domain driven design规范，和各个stakeholders广泛讨论协商，确保理解domain核心以及获得共同的信任
+  - 分析entities-operations-dependencies，更细节地理解系统要求
+  - 基于C4模型，侧重于context和containers的架构，得到一些图表
+  - 分析modularity，分析cohesion/coupling/connascence，设计components
+  - [很重要一点] 定义和决定第一批去追求的architecture characteristics，包括简单的measurement和scope - 这个需要经验以及洞察力，有时候characteristics可能是operation相关，有时候可能testability很影响项目的健康
+  - 根据domain knowledge和characteristics，决定architecture styles
+### 实施以及试验加调整阶段
+  - 基于C4模型，完成components和code层面的架构设计，当然也可以不断调整
+  - 基于PlantUML或者Mermaid或者D2，尽可能完成可以完成的架构图表设计，图表帮助思考与讨论 - 实际过程中也很可能帮你节省很多和别人讨论的时间
+  - [很重要也很考验经验的一点] 开始根据Agile原则实验核心部件，推敲核心部件的技术方案
+  - [很重要也很考验经验的一点] 开始根据Agile原则实验核心部件，推敲核心部件的技术方案；
+  - [很重要一点] 讨论决定核心方案以及technical stack选择，可以维护ADR docs作为以后的参考；
+  - 开始真正的prototype，往往自己是最了解milestones的人，但是很多时候还是需要协商milestones确保和business roadmap没有不一致；
+  - 根据milestones开发，注意定下代码规范，尽量遵循test driven development;
+  - 定义好组件之间的API和interface关系，定义好每个组件的输入输出规范；
+  - 真正开发很多时候需要mock data来协助开发或者加速开发，架构者也需要参与这部分的设计；
+### 架构优化阶段
+  - 当组件之间的关系以及API定义清楚，如何去保证这个规范一直被遵循，在协同开发里比较重要；
+  - 通过Sequence diagram去分析组件之间的concurrency关系，确定API之间的的并行阻塞协同异步等关系；
+  - 进一步在细节上优化性能，性能是系统里的货币，性能的提升可以换来其他各方面的提高，比如testability，性能好的情况下，各个组件CICD里面都能很好测试，很多问题可以避免；
+### 保证项目健康
+  - 确保CICD的设定以及TDD的执行方面；
+  - 项目的packaging/containerization/documentation等方面；
+  - 项目的deployment/release方面；
+### 项目的查漏补缺或者QA
+  - 进行基于组件的QA测试包括单元测试，包括组合测试，包括性能测试，包括stress test；
+  - 提高系统的observability，整合先进的tracing系统，比如OpenTelemetry/Prometheus等；
+### 系统的scalability
+  - scalability本身是architecture characteristics很重要的一环，和architecture styles也很有关；
+  - 针对database的性能优化等；
+  - 基于Kubernetes和microservices的auto scaling等；
+
+## 任重而道远
+
+很多部分纸上谈兵是不难的，实现也是不难的，但是项目本身的trade-off/architecture characteristics的trade-off/资源分配的trade-off/技术栈的选择等，就需要真正的经验积累，比如Fundamentals of software architecture最后一章提到的The 20-minute rule，架构需要对于技术理解的广度，但是对于组件技术栈的深入了解和经验决定架构水平的深度，广度和深度结合起来一起影响系统架构能力。

@@ -16,3 +16,21 @@ module.exports = {
     "gatsby-transformer-sharp",
   ],
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type Mdx implements Node {
+      frontmatter: MdxFrontmatter
+    }
+    type MdxFrontmatter {
+      title: String!
+      date: Date @dateformat
+      hero_image: String
+      hero_image_alt: String
+      hero_image_credit_link: String
+      hero_image_credit_text: String
+    }
+  `
+  createTypes(typeDefs)
+}
