@@ -19,10 +19,10 @@ const IndexPage = () => {
     <Layout pageTitle="">
       <div style={{ 
         backgroundColor: '#f9f9f9', 
-        padding: '2rem', 
+        padding: '1rem', 
         borderRadius: '8px', 
-        maxWidth: '900px', 
-        margin: '0 auto',
+        width: '100%',
+        boxSizing: 'border-box',
         boxShadow: '0 0 10px rgba(0,0,0,0.1)'
       }}>
         <div style={{ position: 'relative' }}>
