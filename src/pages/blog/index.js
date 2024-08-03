@@ -66,6 +66,6 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="LatteBytes" />
+export const Head = () => <Seo title="Blogs | LatteBytes" />
 
 export default BlogPage

@@ -165,6 +165,6 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="Photo Albums" />
+export const Head = () => <Seo title="Photos | LatteBytes" />
 
 export default PhotosPage

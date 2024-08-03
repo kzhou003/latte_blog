@@ -214,6 +214,6 @@ const IndexPage = () => {
   )
 }
 
-export const Head = () => <Seo title="Home Page" />
+export const Head = () => <Seo title="About | LatteBytes" />
 
 export default IndexPage
