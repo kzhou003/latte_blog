@@ -8,6 +8,7 @@ import {
   navLinkText,
   navBar,
   activeNavLink,
+  footer,
 } from './layout.module.css'
 
 const Layout = ({ pageTitle, children }) => {
@@ -32,6 +33,11 @@ const Layout = ({ pageTitle, children }) => {
         <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
+      <footer className={footer}>
+        <div style={{ textAlign: 'center', padding: '20px 0', color: '#666', fontSize: '0.9rem' }}>
+          © {new Date().getFullYear()} Kuan Zhou. Crafted using Gatsby framework.
+        </div>
+      </footer>
     </div>
   )
 }

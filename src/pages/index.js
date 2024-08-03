@@ -64,15 +64,15 @@ const IndexPage = () => {
               </div>
             </div>
           </div>
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Kuan Zhou</h1>
+          <a href="/assets/Kuan_Zhou_1page_CV.pdf" style={{ textDecoration: 'none' }}><h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem', color: "black" }}>Kuan Zhou</h1></a>
           <section style={{ backgroundColor: '#f0f0f0', padding: '1rem', borderRadius: '4px' }}>
             <p>I am currently a machine learning engineer focusing on ML/AI systems including distributed training(with <a href="/assets/patents.pdf">US patents</a>), inference service performance, <a href="https://docs.sambanova.ai/sambastudio/latest/sambastudio-intro.html">AI platform engineering</a> based on Kubernetes, MLOps etc. Additionally, I have a keen interest in building AI applications which leverage the power of generative AI to boost efficiency and enhance creativity.</p>
-            <p>Before immersing myself in AI systems, I worked on scientific research in physics - I developed mathematical analysis, research capabilities, and programming skills during undergraduate studies in Physics(thesis: computational simulation for NMR based quantum computing systems, advised by <a href="https://en.lmmr.ustc.edu.cn/2017/0711/c13356a189308/page.htm">Prof. Xinhua Peng</a> and <a href="https://en.lmmr.ustc.edu.cn/2017/0711/c13356a189307/page.htm">Prof. Jiangfeng Du</a>) at <a href="https://en.ustc.edu.cn/">Univeristy of Science and Technology of China</a> and PhD in Computational Physics(<a href="https://escholarship.org/content/qt920206x9/qt920206x9_noSplash_7368933bb51fd078cfac361c8c514d24.pdf">thesis: electronic properties modeling of two-dimensional materials</a>, 
+            <p>Before immersing myself in AI systems, I worked on scientific research in physics - I developed mathematical analysis, research capabilities, and programming skills during undergraduate studies in Physics(thesis: computational simulation for NMR based quantum computing systems, advised by <a href="https://en.lmmr.ustc.edu.cn/2017/0711/c13356a189308/page.htm">Prof. Xinhua Peng</a> and <a href="https://en.lmmr.ustc.edu.cn/2017/0711/c13356a189307/page.htm">Prof. Jiangfeng Du</a>) at <a href="https://en.ustc.edu.cn/">Univeristy of Science and Technology of China</a> and PhD in Computational Physics(<a href="/assets/thesis.pdf">thesis: electronic properties modeling of two-dimensional materials</a>, 
             advised by <a href="https://intra.ece.ucr.edu/~rlake/">Prof. Roger Lake</a>) at <a href="https://sites.google.com/view/latte-lab/home">LATTE lab</a> at <a href="https://www.ucr.edu/">University of California, Riverside</a>.</p>
             
             <p>The journey which navigates me from Physics to ML/AI started with reading news about ML/AI, attending ML/AI seminars in <a href="http://staff.ustc.edu.cn/~linlixu/">Prof. Linli Xu</a>'s group, taking ML cources in CS department, participating <a href="https://www.kaggle.com/kzhoulatte">Kaggle competitions</a> and completing <a href="https://www.insightdatascience.com/">Insight data science bootcamp</a>. My passion for math and physics was ignited in high school by reading inspiring stories about <a href="https://en.wikipedia.org/wiki/Albert_Einstein">Albert Einstein</a> and <a href="https://en.wikipedia.org/wiki/Richard_Feynman">Richard Feynman</a>  and participating in Math and Physics Olympiads. </p>
 
-            <p>In my spare time, I enjoy films, music, and spending time with my family, hiking, traveling, and trying new foods, along with our two cats, <a href="/assets/gemma.jpg">Gemma (orange tabby)</a> and <a href="/assets/nova.jpg">Nova (ragdoll)</a>.</p>
+            <p>In my spare time, I enjoy films, music, and spending time with my family, hiking, traveling, and trying new foods, along with our two cats, <a href="/images/cats/gemma.jpg">Gemma (orange tabby)</a> and <a href="/images/cats/nova.jpg">Nova (ragdoll)</a>.</p>
           </section>
         </div>
 
@@ -83,7 +83,7 @@ const IndexPage = () => {
 
         <section style={{ marginBottom: '2rem', backgroundColor: '#f0f0f0', padding: '1rem', borderRadius: '4px' }}>
           <h2 style={{ borderBottom: '2px solid #0056b3', paddingBottom: '0.5rem', marginBottom: '1rem' }}>Tech Stack</h2>
-          <p style={{ marginBottom: '1rem' }}>Proficient in, familiar with, or able to contribute quickly after a brief learning period</p>
+          <p style={{ marginBottom: '1rem' }}>Proficient in, familiar with, or able to contribute after a brief learning period</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
             <div style={{ width: '48%' }}>
               <TechCategory title="Programming Languages" items={['Python', 'Golang', 'C/C++', 'Java', 'JavaScript/TypeScript', 'Rust']} />

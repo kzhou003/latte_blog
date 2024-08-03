@@ -11,12 +11,8 @@ const LinksPage = () => {
       icon: faNewspaper,
       links: [
         { name: "Hacker News", url: "https://news.ycombinator.com/" },
-        { name: "Substack", url: "https://substack.com/notes" },
         { name: "Bloomberg", url: "https://www.bloomberg.com/" },
-        { name: "TeamBlind", url: "https://www.teamblind.com/" },
-        { name: "Yahoo Finance", url: "https://finance.yahoo.com/" },
-        { name: "TechCrunch", url: "https://techcrunch.com/" },
-        { name: "The Verge", url: "https://www.theverge.com/" }
+        { name: "Blind", url: "https://www.teamblind.com/" },
       ]
     },
     {
@@ -24,30 +20,8 @@ const LinksPage = () => {
       icon: faUsers,
       links: [
         { name: "Twitter", url: "https://twitter.com/" },
-        { name: "LinkedIn", url: "https://www.linkedin.com/feed/" },
-        { name: "Zhihu", url: "https://www.zhihu.com/follow" },
-        { name: "Reddit", url: "https://www.reddit.com/" },
-        { name: "Mastodon", url: "https://mastodon.social/" }
-      ]
-    },
-    {
-      title: "Online Video",
-      icon: faVideo,
-      links: [
-        { name: "YouTube", url: "https://www.youtube.com/feed/subscriptions" },
-        { name: "Bilibili", url: "https://www.bilibili.com/" },
-        { name: "TED", url: "https://www.ted.com/" },
-        { name: "Vimeo", url: "https://vimeo.com/" }
-      ]
-    },
-    {
-      title: "Learning Resources",
-      icon: faBook,
-      links: [
-        { name: "Coursera", url: "https://www.coursera.org/" },
-        { name: "edX", url: "https://www.edx.org/" },
-        { name: "Khan Academy", url: "https://www.khanacademy.org/" },
-        { name: "MIT OpenCourseWare", url: "https://ocw.mit.edu/" }
+        { name: "LinkedIn", url: "https://www.linkedin.com/" },
+        { name: "Zhihu(知乎)", url: "https://www.zhihu.com/" },
       ]
     },
     {
@@ -55,9 +29,15 @@ const LinksPage = () => {
       icon: faCode,
       links: [
         { name: "GitHub", url: "https://github.com/" },
-        { name: "Stack Overflow", url: "https://stackoverflow.com/" },
-        { name: "CodePen", url: "https://codepen.io/" },
-        { name: "DevDocs", url: "https://devdocs.io/" }
+        { name: "alphaXiv", url: "https://alphaxiv.org/" }
+      ]
+    },
+    {
+      title: "Video Platforms",
+      icon: faVideo,
+      links: [
+        { name: "YouTube", url: "https://www.youtube.com/" },
+        { name: "Bilibili", url: "https://www.bilibili.com/" },
       ]
     },
     {
@@ -65,9 +45,16 @@ const LinksPage = () => {
       icon: faPodcast,
       links: [
         { name: "Lex Fridman Podcast", url: "https://lexfridman.com/podcast/" },
-        { name: "Software Engineering Daily", url: "https://softwareengineeringdaily.com/" },
-        { name: "Changelog", url: "https://changelog.com/podcast" },
-        { name: "Syntax", url: "https://syntax.fm/" }
+        { name: "Silicon Valley 101(硅谷101)", url: "https://sv101.fireside.fm/" },
+        { name: "Yixi(一席)", url: "https://yixi.tv/#/home" },
+      ]
+    },
+    {
+      title: "Learning Resources",
+      icon: faBook,
+      links: [
+        { name: "MIT OpenCourseWare", url: "https://ocw.mit.edu/" },
+        { name: "Stanford Online", url: "https://online.stanford.edu/free-courses" }
       ]
     }
   ]
@@ -77,6 +64,17 @@ const LinksPage = () => {
 
   return (
     <Layout pageTitle="">
+      <div style={{ 
+        textAlign: 'center', 
+        marginBottom: '2rem', 
+        fontStyle: 'italic', 
+        color: '#555',
+        maxWidth: '800px',
+        margin: '0 auto 2rem'
+      }}>
+        <p>"A nudge, as we will use the term, is any aspect of the choice architecture that alters people's behavior in a predictable way without forbidding any options or significantly changing their economic incentives." – Richard H. Thaler and Cass R. Sunstein</p>
+      </div>
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' }}>
         {linkCategories.map((category, index) => (
           <div 
@@ -85,9 +83,10 @@ const LinksPage = () => {
               border: '1px solid #003366', 
               borderRadius: '8px', 
               padding: '20px',
-              backgroundColor: hoveredCategory === index ? '#cce0ff' : '#f0f8ff',
-              transition: 'background-color 0.3s ease',
-              boxShadow: hoveredCategory === index ? '0 0 10px rgba(0,51,102,0.2)' : 'none'
+              backgroundColor: hoveredCategory === index ? '#e6f2ff' : '#ffffff',
+              transition: 'all 0.3s ease',
+              boxShadow: hoveredCategory === index ? '0 0 15px rgba(0,51,102,0.3)' : '0 2px 5px rgba(0,0,0,0.1)',
+              transform: hoveredCategory === index ? 'translateY(-5px)' : 'translateY(0)'
             }}
             onMouseEnter={() => setHoveredCategory(index)}
             onMouseLeave={() => setHoveredCategory(null)}
@@ -97,7 +96,9 @@ const LinksPage = () => {
               paddingBottom: '10px', 
               marginBottom: '15px',
               display: 'flex',
-              alignItems: 'center'
+              alignItems: 'center',
+              color: '#003366',
+              fontSize: '1.2rem'
             }}>
               <FontAwesomeIcon icon={category.icon} style={{ marginRight: '10px', color: '#003366' }} />
               {category.title}
@@ -116,18 +117,20 @@ const LinksPage = () => {
                     rel="noopener noreferrer"
                     style={{ 
                       display: 'block',
-                      padding: '10px',
+                      padding: '12px',
                       border: '1px solid #003366',
                       borderRadius: '4px',
-                      color: '#003366', 
+                      color: hoveredLink === `${index}-${linkIndex}` ? '#ffffff' : '#003366', 
                       textDecoration: 'none',
                       transition: 'all 0.3s ease',
-                      backgroundColor: hoveredLink === `${index}-${linkIndex}` ? '#99c2ff' : '#e6e6e6',
+                      backgroundColor: hoveredLink === `${index}-${linkIndex}` ? '#003366' : '#f0f8ff',
                       boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                      fontWeight: 'bold',
+                      fontWeight: '500',
                       textAlign: 'center',
                       textTransform: 'uppercase',
                       letterSpacing: '1px',
+                      fontSize: '0.9rem',
+                      transform: hoveredLink === `${index}-${linkIndex}` ? 'scale(1.03)' : 'scale(1)'
                     }}
                     onMouseEnter={() => setHoveredLink(`${index}-${linkIndex}`)}
                     onMouseLeave={() => setHoveredLink(null)}
@@ -139,6 +142,7 @@ const LinksPage = () => {
                     }}
                     tabIndex={0}
                     role="button"
+                    aria-label={`Visit ${link.name}`}
                   >
                     {link.name}
                   </a>

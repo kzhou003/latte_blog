@@ -10,7 +10,14 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/blog`,
-      }
+      },
+    },
+      {
+        resolve: "gatsby-source-filesystem",
+        options: {
+          name: `images`,
+          path: `${__dirname}/src/images`, // Adjust this path to where your images are
+        }
     },
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
