@@ -29,12 +29,12 @@ const Layout = ({ pageTitle, children }) => {
           ))}
         </ul>
       </nav>
-      <main style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+      <main style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', padding: '0 15px', boxSizing: 'border-box' }}>
         <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
       <footer className={footer}>
-        <div style={{ textAlign: 'center', padding: '20px 0', color: '#666', fontSize: '0.9rem' }}>
+        <div style={{ textAlign: 'center', padding: '20px 15px', color: '#666', fontSize: '0.9rem', wordWrap: 'break-word' }}>
           © {new Date().getFullYear()} Kuan Zhou. Crafted using Gatsby framework.
         </div>
       </footer>
