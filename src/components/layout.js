@@ -15,7 +15,7 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div className={container}>
       <nav className={navBar}>
-        <ul className={navLinks}>
+        <ul className={navLinks} style={{ justifyContent: 'flex-start', paddingLeft: '15px' }}>
           {['About', 'Blog', 'Photos', 'Sharings', 'Links'].map((item, index) => (
             <li key={index} className={navLinkItem}>
               <Link
@@ -29,7 +29,14 @@ const Layout = ({ pageTitle, children }) => {
           ))}
         </ul>
       </nav>
-      <main style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', padding: '0 15px', boxSizing: 'border-box' }}>
+      <main style={{ 
+        width: '100%', 
+        maxWidth: '100%', 
+        overflowX: 'hidden', 
+        padding: '0 15px', 
+        boxSizing: 'border-box',
+        marginTop: '60px' // Add space below the fixed navbar
+      }}>
         <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
