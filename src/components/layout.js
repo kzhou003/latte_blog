@@ -16,7 +16,7 @@ const Layout = ({ pageTitle, children }) => {
     <div className={container}>
       <nav className={navBar}>
         <ul className={navLinks}>
-          {['About', 'Blog',  'Photos', 'Sharings', 'Links'].map((item, index) => (
+          {['About', 'Blog', 'Photos', 'Sharings', 'Links'].map((item, index) => (
             <li key={index} className={navLinkItem}>
               <Link
                 to={item === 'About' ? '/' : `/${item.toLowerCase()}`}
@@ -29,7 +29,7 @@ const Layout = ({ pageTitle, children }) => {
           ))}
         </ul>
       </nav>
-      <main>
+      <main style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
         <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
