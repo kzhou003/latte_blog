@@ -15,7 +15,14 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div className={container}>
       <nav className={navBar}>
-        <ul className={navLinks} style={{ justifyContent: 'flex-start', paddingLeft: '15px' }}>
+      <ul className={navLinks} style={{ 
+        display: 'flex', 
+        flexWrap: 'wrap',
+        justifyContent: 'center', 
+        padding: '10px 0',
+        margin: 0,
+        listStyle: 'none'
+      }}>
           {['About', 'Blog', 'Photos', 'Sharings', 'Links'].map((item, index) => (
             <li key={index} className={navLinkItem}>
               <Link
