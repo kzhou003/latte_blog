@@ -19,6 +19,22 @@ module.exports = {
           path: `${__dirname}/src/images`, // Adjust this path to where your images are
         }
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // Your Google Analytics measurement ID
+        trackingIds: ["G-J6S2CPWCYZ"],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Setting this parameter is also optional
+          respectDNT: true,
+          // Avoids sending pageview hits from custom paths
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+        },
+      },
+    },
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
   ],
