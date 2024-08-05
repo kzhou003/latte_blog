@@ -156,6 +156,6 @@ const LinksPage = () => {
   )
 }
 
-export const Head = () => <Seo title="Links | LatteBytes" />
+export const Head = () => <Seo title="Links" />
 
 export default LinksPage

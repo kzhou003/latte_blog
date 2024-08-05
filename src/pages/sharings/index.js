@@ -155,6 +155,6 @@ const SharingPage = () => {
   )
 }
 
-export const Head = () => <Seo title="Sharings | LatteBytes" />
+export const Head = () => <Seo title="Sharings" />
 
 export default SharingPage
