@@ -47,7 +47,8 @@ const LinksPage = () => {
         { name: "GitHub", url: "https://github.com/" },
         { name: "HuggingFace", url: "https://huggingface.co/" },
         { name: "Kaggle", url: "https://www.kaggle.com/" },
-        { name: "Leetcode", url: "https://leetcode.com/" }
+        { name: "Leetcode", url: "https://leetcode.com/" },
+        { name: "Deep ML", url: "https://www.deep-ml.com/"}
 
       ]
     },
