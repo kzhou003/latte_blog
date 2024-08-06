@@ -2,7 +2,7 @@ import * as React from 'react'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faNewspaper, faUsers, faVideo, faBook, faCode, faPodcast } from '@fortawesome/free-solid-svg-icons'
+import { faNewspaper, faUsers, faVideo, faBook, faCode, faPodcast, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const LinksPage = () => {
   const linkCategories = [
@@ -30,23 +30,25 @@ const LinksPage = () => {
       ]
     },
     {
+      title: "Research Tools",
+      icon: faSearch,
+      links: [
+        { name: "alphaXiv", url: "https://alphaxiv.org/" },
+        { name: "Papers with code", url: "https://paperswithcode.com/"},
+        { name: "Connected papers", url: "https://www.connectedpapers.com/"},
+        { name: "Elicit", url: "https://elicit.com/"},
+        { name: "Otio", url:"https://app.otio.ai"}
+      ]
+    },
+    {
       title: "Developer Tools",
       icon: faCode,
       links: [
         { name: "GitHub", url: "https://github.com/" },
-        { name: "alphaXiv", url: "https://alphaxiv.org/" },
         { name: "HuggingFace", url: "https://huggingface.co/" },
         { name: "Kaggle", url: "https://www.kaggle.com/" },
         { name: "Leetcode", url: "https://leetcode.com/" }
 
-      ]
-    },
-    {
-      title: "Video Platforms",
-      icon: faVideo,
-      links: [
-        { name: "YouTube", url: "https://www.youtube.com/" },
-        { name: "Bilibili", url: "https://www.bilibili.com/" },
       ]
     },
     {
@@ -56,6 +58,14 @@ const LinksPage = () => {
         { name: "Lex Fridman Podcast", url: "https://lexfridman.com/podcast/" },
         { name: "Silicon Valley 101(硅谷101)", url: "https://sv101.fireside.fm/" },
         { name: "Yixi(一席)", url: "https://yixi.tv/#/home" },
+      ]
+    },
+    {
+      title: "Video Platforms",
+      icon: faVideo,
+      links: [
+        { name: "YouTube", url: "https://www.youtube.com/" },
+        { name: "Bilibili", url: "https://www.bilibili.com/" },
       ]
     },
     {
