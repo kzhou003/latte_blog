@@ -11,8 +11,11 @@ const LinksPage = () => {
       icon: faNewspaper,
       links: [
         { name: "Hacker News", url: "https://news.ycombinator.com/" },
+        { name: "ByteByteGo Newsletter", url: "https://blog.bytebytego.com/" },
+        { name: "Nvidia blogs", url: "https://blogs.nvidia.com/" },
         { name: "Bloomberg", url: "https://www.bloomberg.com/" },
-        { name: "Blind", url: "https://www.teamblind.com/" },
+        { name: "Work Chronicles", url: "https://workchronicles.substack.com/"},
+       
       ]
     },
     {
@@ -22,6 +25,8 @@ const LinksPage = () => {
         { name: "Twitter", url: "https://twitter.com/" },
         { name: "LinkedIn", url: "https://www.linkedin.com/" },
         { name: "Zhihu(知乎)", url: "https://www.zhihu.com/" },
+        { name: "Daily dev", url: "https://app.daily.dev/" },
+        { name: "Blind", url: "https://www.teamblind.com/" },
       ]
     },
     {
@@ -29,7 +34,11 @@ const LinksPage = () => {
       icon: faCode,
       links: [
         { name: "GitHub", url: "https://github.com/" },
-        { name: "alphaXiv", url: "https://alphaxiv.org/" }
+        { name: "alphaXiv", url: "https://alphaxiv.org/" },
+        { name: "HuggingFace", url: "https://huggingface.co/" },
+        { name: "Kaggle", url: "https://www.kaggle.com/" },
+        { name: "Leetcode", url: "https://leetcode.com/" }
+
       ]
     },
     {
