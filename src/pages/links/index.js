@@ -14,8 +14,8 @@ const LinksPage = () => {
         { name: "ByteByteGo Newsletter", url: "https://blog.bytebytego.com/" },
         { name: "Nvidia blogs", url: "https://blogs.nvidia.com/" },
         { name: "Bloomberg", url: "https://www.bloomberg.com/" },
+        { name: "Daily articles(每日一文)", url: "https://www.qhsou.com/one/"},
         { name: "Work Chronicles", url: "https://workchronicles.substack.com/"},
-       
       ]
     },
     {
