@@ -14,11 +14,11 @@ const albums = [
 ]
 
 const PhotosPage = ({ data }) => {
-  console.log('GraphQL query result:', JSON.stringify(data, null, 2))
   const [hoveredAlbum, setHoveredAlbum] = React.useState(null)
   const [randomIndices, setRandomIndices] = React.useState({})
-
-  console.log('GraphQL query result:', data)
+  const [isAuthenticated, setIsAuthenticated] = React.useState(false)
+  const [password, setPassword] = React.useState('')
+  const [error, setError] = React.useState('')
 
   React.useEffect(() => {
     const newRandomIndices = {}
@@ -35,7 +35,6 @@ const PhotosPage = ({ data }) => {
 
   const getAlbumData = (folder) => {
     const albumPhotos = data.allFile.nodes.filter(node => node.relativePath.startsWith(`${folder.split('/').pop()}`))
-    console.log(`Album photos for ${folder}:`, albumPhotos)
     if (albumPhotos.length > 0) {
       const albumId = albums.find(album => album.folder === folder).id
       const coverImages = randomIndices[albumId]?.map(index => 
@@ -53,6 +52,44 @@ const PhotosPage = ({ data }) => {
     }
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (password === '05202023') {
+      setIsAuthenticated(true)
+      setError('')
+    } else {
+      setError('Incorrect answer. Please try again.')
+    }
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <Layout pageTitle="">
+        <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px' }}>
+          <h2>Authentication Required</h2>
+          <p>To view the photos, please answer the following question:</p>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="password" style={{ display: 'block', marginBottom: '10px' }}>
+              What is Nova's birthdate? (Format: MMDDYYYY)
+            </label>
+            <input
+              type="text"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ width: '100%', padding: '8px', marginBottom: '10px' }}
+              placeholder="MMDDYYYY"
+            />
+            <button type="submit" style={{ padding: '8px 16px', backgroundColor: '#4d94ff', color: 'white', border: 'none', borderRadius: '4px' }}>
+              Submit
+            </button>
+          </form>
+          {error && <p style={{ color: 'red', marginTop: '10px' }}>{error}</p>}
+        </div>
+      </Layout>
+    )
+  }
+
   return (
     <Layout pageTitle="">
       <div style={{ 
@@ -68,7 +105,6 @@ const PhotosPage = ({ data }) => {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px' }}>
         {albums.map((album) => {
           const { coverImages, photoCount } = getAlbumData(album.folder)
-          console.log(`Album ${album.title} data:`, { coverImages, photoCount })
           return (
             <div 
               key={album.id} 
