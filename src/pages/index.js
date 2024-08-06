@@ -15,6 +15,13 @@ const TechCategory = ({ title, items }) => (
 )
 
 const IndexPage = () => {
+  const [isJumping, setIsJumping] = React.useState(true);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setIsJumping(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Layout pageTitle="">
       <div style={{ 
@@ -35,14 +42,42 @@ const IndexPage = () => {
             flexDirection: 'column', 
             alignItems: 'center' 
           }}>
-            <StaticImage
-              src="https://en.gravatar.com/userimage/72975207/d4830a67d9782fa8c34b7493a979add5?size=original"
-              alt="Kuan Zhou's profile picture"
-              layout="fixed"
-              width={220}
-              height={220}
-              style={{ borderRadius: '50%', marginLeft: '1rem', marginBottom: '1rem' }}
-            />
+            <div
+              style={{
+                animation: 'dropAndTwinkle 2s ease-out',
+              }}
+              onMouseEnter={() => setIsJumping(true)}
+              onMouseLeave={() => setIsJumping(false)}
+            >
+              <StaticImage
+                src="https://en.gravatar.com/userimage/72975207/d4830a67d9782fa8c34b7493a979add5?size=original"
+                alt="Kuan Zhou's profile picture"
+                layout="fixed"
+                width={220}
+                height={220}
+                style={{ 
+                  borderRadius: '50%', 
+                  marginLeft: '1rem', 
+                  marginBottom: '1rem',
+                  animation: isJumping ? 'twinkle 1s infinite alternate' : 'none',
+                }}
+              />
+            </div>
+            <style>
+              {`
+                @keyframes dropAndTwinkle {
+                  0% { transform: translateY(-100vh); }
+                  60% { transform: translateY(0); }
+                  80% { transform: scale(1.1); }
+                  90% { transform: scale(0.9); }
+                  100% { transform: scale(1); }
+                }
+                @keyframes twinkle {
+                  0% { transform: rotate(-5deg) scale(1.05); box-shadow: 0 0 10px rgba(255,255,255,0.8); }
+                  100% { transform: rotate(5deg) scale(1.15); box-shadow: 0 0 20px rgba(255,255,255,0.8); }
+                }
+              `}
+            </style>
             <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
               <p style={{ marginBottom: '0.5rem' }}><FontAwesomeIcon icon={faMapMarkerAlt} /> San Francisco Bay Area</p>
               <div>
