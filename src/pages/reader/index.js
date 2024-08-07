@@ -109,7 +109,7 @@ const ReaderPage = ({ data }) => {
         </TabList>
 
         <TabPanel>
-          <h2 style={{ marginTop: '2rem', textAlign: 'center' }}>Random Paper for the day</h2>
+          <h2 style={{ marginTop: '2rem', textAlign: 'center' }}>Random paper for the day</h2>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
             <button onClick={() => setRandomPaper(getRandomPaper(entries))} style={{ 
               padding: '10px 20px', 
@@ -120,7 +120,7 @@ const ReaderPage = ({ data }) => {
               cursor: 'pointer',
               transition: 'background-color 0.3s'
             }}>
-              Regenerate Random Paper
+              Regenerate Paper
             </button>
           </div>
           <div style={{ backgroundColor: '#f0f0f0', padding: '20px', borderRadius: '10px', marginBottom: '20px' }}>

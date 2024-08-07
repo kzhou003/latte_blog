@@ -23,7 +23,7 @@ const Layout = ({ pageTitle, children }) => {
         margin: 0,
         listStyle: 'none'
       }}>
-          {['About', 'Blog', 'Photos', 'Sharings', 'Links', 'Reader'].map((item, index) => (
+          {['About', 'Blog', 'Photos', 'Sharings', 'Reader', 'Links'].map((item, index) => (
             <li key={index} className={navLinkItem}>
               <Link
                 to={item === 'About' ? '/' : `/${item.toLowerCase()}`}
