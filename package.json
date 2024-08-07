@@ -13,11 +13,18 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mdx-js/react": "^2.3.0",
+    "@mui/material": "^5.16.6",
+    "@mui/x-data-grid": "^7.12.0",
+    "@orcid/bibtex-parse-js": "^0.0.25",
+    "bibtex-parse": "^2.1.0",
+    "chart.js": "^4.4.3",
     "d3-scale": "^4.0.2",
     "gatsby": "^5.13.7",
     "gatsby-plugin-google-gtag": "^5.13.1",
@@ -27,9 +34,11 @@
     "gatsby-source-filesystem": "^5.8.0",
     "gatsby-transformer-sharp": "^5.8.0",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
-    "react-simple-maps": "^3.0.0"
+    "react-simple-maps": "^3.0.0",
+    "react-tabs": "^6.0.2"
   },
   "repository": {
     "type": "git",
