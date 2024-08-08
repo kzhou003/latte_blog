@@ -15,6 +15,7 @@ const LinksPage = () => {
         { name: "LinkedIn", url: "https://www.linkedin.com/" },
         { name: "Zhihu(知乎)", url: "https://www.zhihu.com/" },
         { name: "Nvidia blogs", url: "https://blogs.nvidia.com/" },
+        { name: "alphaXiv", url: "https://alphaxiv.org/" },
         { name: "Work Chronicles", url: "https://workchronicles.substack.com/"},
         { name: "Daily articles(每日一文)", url: "https://www.qhsou.com/one/"},
       ]
