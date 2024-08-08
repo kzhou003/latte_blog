@@ -2,10 +2,23 @@ import * as React from 'react'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faNewspaper, faUsers, faVideo, faBook, faCode, faPodcast, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faNewspaper, faUsers, faVideo, faBook, faCode, faPodcast, faSearch, faStar } from '@fortawesome/free-solid-svg-icons'
 
 const LinksPage = () => {
   const linkCategories = [
+    {
+      title: "Favorites",
+      icon: faStar,
+      links: [
+        { name: "Hacker News", url: "https://news.ycombinator.com/" },
+        { name: "Twitter", url: "https://twitter.com/" },
+        { name: "LinkedIn", url: "https://www.linkedin.com/" },
+        { name: "Zhihu(知乎)", url: "https://www.zhihu.com/" },
+        { name: "Nvidia blogs", url: "https://blogs.nvidia.com/" },
+        { name: "Work Chronicles", url: "https://workchronicles.substack.com/"},
+        { name: "Daily articles(每日一文)", url: "https://www.qhsou.com/one/"},
+      ]
+    },
     {
       title: "Daily News",
       icon: faNewspaper,
